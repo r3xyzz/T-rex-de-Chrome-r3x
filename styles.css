@@ -44,7 +44,7 @@ body{
     bottom: 22px;
     left: 42px;
     z-index: 2;
-    background: url(img/dino.png) repeat-x 0px 0px;
+    background: url(imagenes/dino.png) repeat-x 0px 0px;
     background-size: 336px 84px;
     background-position-x: 0px;
 }
@@ -66,7 +66,7 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    background: url(img/suelo.png) repeat-x 0px 0px;
+    background: url(imagenes/suelo.png) repeat-x 0px 0px;
     background-size: 50% 42px;
 }
 
@@ -78,14 +78,14 @@ body{
     bottom: 16px;
     left: 600px;
     z-index: 1;
-    background: url(img/cactus1.png) no-repeat;
+    background: url(imagenes/cactus1.png) no-repeat;
 }
 
 /* Estilo de los cactus grandes */
 .cactus2{
     width: 98px;
     height: 66px;
-    background: url(img/cactus2.png) no-repeat;
+    background: url(imagenes/cactus2.png) no-repeat;
 }
 
 /* Estilo de las nubes */
@@ -94,7 +94,7 @@ body{
     height: 26px;
     position: absolute;
     z-index: 0;
-    background: url(img/nube.png) no-repeat;
+    background: url(imagenes/nube.png) no-repeat;
     background-size: 92px 26px;
 }
 

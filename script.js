@@ -106,6 +106,9 @@ function Update() {
 function HandleKeyDown(ev){
     if(ev.keyCode == 32){
         Saltar();
+    } else if(parado) {
+        // Si el juego está parado (Game Over), reiniciar el juego al presionar cualquier tecla
+        ReiniciarJuego();
     }
 }
 
@@ -245,6 +248,9 @@ function GanarPuntos() {
 function GameOver() {
     Estrellarse();
     gameOver.style.display = "block";
+
+    // Escucha cualquier tecla para reiniciar el juego
+    document.addEventListener("keydown", HandleKeyDown);
 }
 
 // Detecta la colisión entre el dinosaurio y los obstáculos
@@ -272,4 +278,34 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
         ((aRect.left + aRect.width - paddingRight) < bRect.left) ||
         (aRect.left + paddingLeft > (bRect.left + bRect.width))
     );
+}
+
+// Reinicia el juego después de "Game Over"
+function ReiniciarJuego() {
+    // Restablece todas las variables y el estado del juego
+    sueloX = 0;
+    velY = 0;
+    dinoPosY = sueloY;
+    obstaculos = [];
+    nubes = [];
+    score = 0;
+    gameVel = 1;
+    parado = false;
+    saltando = false;
+
+    // Oculta el mensaje de "Game Over"
+    gameOver.style.display = "none";
+
+    // Restaura el estado del dinosaurio
+    dino.classList.remove("dino-estrellado");
+    dino.classList.add("dino-corriendo");
+    textoScore.innerText = score;
+
+    // Limpia el contenedor de obstáculos y nubes
+    document.querySelectorAll('.cactus, .nube').forEach(function(elem) {
+        elem.remove();
+    });
+
+    // Inicia el bucle del juego nuevamente
+    Loop();
 }
