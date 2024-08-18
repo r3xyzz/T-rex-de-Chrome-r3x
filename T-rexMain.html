@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-rexMainPage</title>
+    <title>Dinosaurio Chrome V2</title>
+    <!-- Enlaza el archivo CSS para aplicar estilos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <!-- Contenedor principal del juego -->
+    <div class="contenedor">
+        <!-- Suelo donde se desplazan los obstáculos y el dinosaurio -->
+        <div class="suelo"></div>
+        <!-- El dinosaurio que corre y salta -->
+        <div class="dino dino-corriendo"></div>
+        <!-- Marcador de puntuación -->
+        <div class="score">0</div>
+    </div>
+
+    <!-- Mensaje de "Game Over" que aparece al perder -->
+    <div class="game-over">GAME OVER</div>
+
+    <!-- Enlaza el archivo JavaScript que contiene la lógica del juego -->
+    <script src="script.js"></script>
 </body>
 </html>
